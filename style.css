@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+
+    background-color: black;
+    color: red;
+    font-family: cursive;
+    text-align: center;
+}
+
+h1{
+    text-shadow: 2px 2px 1px rgb(179, 179, 179);
+    font-size: 50px;
+    padding: 50px;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    width: 70%;
+}
+
+.div{
+    width: 190px;
+    height: 30px;
+    background-color: rgb(154, 154, 154);
+    border: 1px solid white;
+}
+
+.container{
+    width: fit-content;
+    height: fit-content;
+    
+}
