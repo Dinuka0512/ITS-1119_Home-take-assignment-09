@@ -13,17 +13,43 @@ h3{
 .container{
     width: 80%;
     height: fit-content;
-
-    /* background-color: white; */
     display: flex;
     justify-self: center;
     justify-content: center;
-    gap: 1px;
+    gap: 3px;
 }
 
 .container>div{
     width: 100px;
     height: 50px;
 
-    background-color: white;
+    /* background-color: white; */
+}
+
+.light {
+    width: 30px;
+    height: 30px;
+    background: #222;
+    transition: 0.2s;
+  }
+  
+  .active {
+    background-color:red;
+    box-shadow: 0 0 20px red;
+  }
+
+button{
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+.btnCon{
+    margin-top: 20px;
+    width: fit-content;
+    height: fit-content;
+
+    display: flex;
+    justify-self: center;
 }

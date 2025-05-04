@@ -1,17 +1,36 @@
-const colorD = "red";
-const colorL = "rgb(255, 125, 125)";
+let lights = $('.light'); // LIGHTS ARRAY SELECTED
+let direction = 1;
+let index = 0;
+let interalLight;
 
-let domArray = document.getElementsByClassName("div");
+function StartLightning(){
+    lights.removeClass('active');        // Turn off all lights
+    lights.eq(index).addClass('active'); // Turn on current light
 
-setInterval(runLight,10000);
+    index += direction;                  // Move in the current direction
 
-function runLight(){
-    for(let i = 1; i < domArray.length-1; i++){
-        domArray[i].style.backgroundColor = colorD;
-        domArray[i+1].style.backgroundColor = colorL;
-        domArray[i-1].style.backgroundColor = colorL;
+    if (index === lights.length - 1 || index === 0) {
+        direction *= -1;                // Reverse direction at the ends
     }
-
-    
-    // domArray.reverse();
 }
+
+
+document.getElementById('music').pause();
+
+let start = 0;
+document.getElementById('Start').addEventListener('click', function(){
+    if(start == 0){
+        start = 1;
+        interalLight = setInterval(StartLightning, 100);
+        document.getElementById('music').play();
+    }
+})
+
+
+document.getElementById('Stop').addEventListener('click', function(){
+    if(start == 1){
+        start = 0;
+        clearInterval(interalLight);
+        document.getElementById('music').pause();
+    }
+})
